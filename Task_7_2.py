@@ -1,19 +1,11 @@
-a = int(input())
-b = input()
-c = '!?., '
-def coder():
-    for i in b:
-        if i in c:
-            print(chr(ord(i)), end='')
-        if i.islower():
-            if ord(i) + a > 122:
-                print(chr(ord(i) + a - 26), end='')
-            else:
-                print(chr(ord(i) + a), end='')
-        elif i.isupper():
-            if ord(i) + a > 90:
-                print(chr(ord(i) + a - 26), end='')
-            else:
-                print(chr(ord(i) + a), end='')
-    print()
-coder()
+def ceasar(string, n):
+    res = ""
+    n26 = n % 26
+    for i in string:
+        if "a" <= i <= "z":
+            new_i = ord(i) + n26
+            if new_i > ord("z"):
+                new_i = ord("a") + new_i - ord("z") - 1
+            res += chr(new_i)
+        return res
+print(ceasar("abcxyz", 54))

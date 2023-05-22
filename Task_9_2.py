@@ -1,8 +1,8 @@
 s = input()
-def maska(x): # эта функция выдаёт по слову маску
+def maska(x):
     res = []
     for i, j in enumerate(x):
-        if j in "ауоыиэяюёе": # гласные определять тем, что выписать все гласные буквы алфавита
+        if j in "ауоыиэяюёе":
             res.append(i)
         return res
 print(maska(s))

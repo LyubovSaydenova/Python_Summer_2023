@@ -1,4 +1,4 @@
-import openpyxl #
+import openpyxl
 name_file = input('Введите название файла с расширением: ')
 wb = openpyxl.load_workbook(name_file)
 ws = wb.active

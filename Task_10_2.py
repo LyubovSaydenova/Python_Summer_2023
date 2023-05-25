@@ -18,5 +18,4 @@ ws = wb.active
 for i in range(1, len(lst) + 1):
     ws.cell(i, 1).value = lst[i-1][0]
     ws.cell(i, 2).value = lst[i-1][1]
-print("Проверяйте")
 wb.save(name_file)

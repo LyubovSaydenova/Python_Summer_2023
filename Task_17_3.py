@@ -8,3 +8,9 @@ class Shape:
         self.colour = new_colour
 a = Shape('Red')
 print(a.get_colour())
+    def get_square(self):
+        return self.square
+    def set_square(self, new_square):
+        self.square = new_square
+a = Square('5')
+print(a.get_square())

@@ -1,15 +1,18 @@
 class Item:
-    """Item description"""
-    emp = 0
-
     def __init__(self, name, price, quantity):
         self.name = name
         self.price = price
         self.quantity = quantity
-        Item.emp += 1
 
-    def display_item(self):
-        print('Item')
+    def __getattribute__(self,attrname):
+        if attrname == 'name':
+            return object.__getattribute__(self,attrname).title()
+        else:
+            return object.__getattribute__(self,attrname)
 
-    def display_total(self):
-        print(self.price * self.quantity)
+    def __getattr__(self,attrname):
+        if attrname == "total":
+            return self.price * self.quantity
+        else:
+            raise AttributeError
+

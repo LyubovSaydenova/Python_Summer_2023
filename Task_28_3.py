@@ -1,12 +1,8 @@
-def f(n, x, y):
-    if n > 0:
-        if n == 1:
-            print(n, x, y)
-        else:
-            f(n - 1, x, y)
-            f(n - 2, y, 6 - x - y)
-            print(0, x, y)
-            f(n - 2, 6 - x - y, x)
-            f(n - 1, x, y)
-n = int(input())
-f(n, 1, 3)
+def solve_hanoi_tower(discs):
+    if discs == 0: return 0
+    hm = 1
+    for i in range(2, discs + 1):
+        hm = 2 * hm + 1
+    return hm
+discs = int(input())
+print(solve_hanoi_tower(discs))
